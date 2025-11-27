@@ -6,14 +6,63 @@
     <title>Directorio - INDAJUCAM</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<div id="lightbox-overlay">
-    <span id="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
-
-<body>
     
+    <style>
+        /* --- ESTILOS GENERALES IMPORTADOS --- */
+        body { background-color: #fcfcfc; color: #333; font-family: 'Segoe UI', sans-serif; margin: 0; }
+        .container-delegaciones { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: #8B1D35; font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+
+        .info-banner {
+            background-color: #fff; border-left: 5px solid #BC955C; padding: 20px;
+            margin: 0 auto 50px auto; max-width: 800px; text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-radius: 4px;
+        }
+        .info-banner p { margin: 5px 0; font-size: 1.1rem; }
+        
+        .mencion-campeche { background-color: #fff; padding: 30px; text-align: center; border-left: 6px solid #8B1D35; margin-bottom: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-radius: 4px; }
+        .delegation-photo { width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto 25px auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        
+        .delegation-block { background: #fff; margin-bottom: 60px; border: 1px solid #e1e1e1; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .delegation-header { background-color: #8B1D35; color: white; padding: 15px 25px; }
+        .delegation-header h3 { margin: 0; font-size: 1.4rem; font-weight: 600; text-transform: uppercase; }
+        .delegation-body { padding: 30px; }
+
+        .no-photo {
+            width: 150px; height: 150px; background-color: #eee; color: #bbb;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; margin: 0 auto 15px auto;
+        }
+        
+        /* Grilla de Personal (Adaptada para el Directorio) */
+        .staff-section { margin-top: 0; padding-top: 20px; }
+        .staff-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+
+        .staff-card { background: #fff; border: 1px solid #eee; padding: 25px 20px; border-radius: 8px; text-align: center; width: 220px; transition: transform 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .staff-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .staff-card img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 4px solid #f4f4f4; margin-bottom: 15px; }
+        .staff-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; text-transform: capitalize; color: #222; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .staff-role { font-size: 0.8rem; color: #8B1D35; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 8px; min-height: 35px; }
+        .staff-ext { font-size: 0.9rem; color: #555; background: #f0f0f0; display: inline-block; padding: 2px 10px; border-radius: 10px; }
+        
+        @media (max-width: 768px) { 
+            .staff-card { width: 100%; max-width: 280px; }
+        }
+
+        @media print {
+            .navbar, .footer-content, .contact-banner, .requisitos-box, .staff-section, .page-title, .btn-submit, .action-buttons {
+                display: none !important;
+            }
+            body { background-color: #fff; font-size: 12px; }
+            .container-primera-vez { margin: 0; padding: 0; max-width: 100%; }
+            .form-container { box-shadow: none; border: none; padding: 0; margin: 0; }
+            input, textarea, select { border: 1px solid #aaa !important; background: none !important; }
+            fieldset { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
     <nav class="navbar">
         <div class="logo-container">
             <a href="index.html"><img src="img/LOGO.JPG" alt="Logo INDAJUCAM" class="logo-img"></a>
@@ -22,101 +71,88 @@
             <li><a href="index.html">INICIO</a></li>
         </ul>
     </nav>
-    
-    <main>
-        <div class="container">
-            <h2>Directorio Institucional</h2>
-            <p>Conoce al equipo directivo que trabaja para garantizar tu acceso a la justicia, con base en el Capítulo III de nuestra Ley.</p>
-            <div class="organigrama">
-                <img src="img/directorio/organigrama.jpg" alt="Organigrama Institucional">
-            </div>    
 
-            <div class="directorio-grid">
+    <main class="container-delegaciones">
+        
+        <h2 class="section-title">Directorio Institucional</h2>
 
-                <div class="directorio-item">
-                    <img src="img/directorio/KARLA BEATRIZ CHUC ESTRELLA.jpg" alt="Foto de peril">
-                    <h3>Karla Beatriz Chuc Estrella</h3>
-                    <p class="puesto">Encargada del Despacho de la Dirección General</p>
-                    <p class="desc">Ext. 1008</p>
-                </div>
+        <div class="info-banner">
+            <p>Conoce al equipo directivo que trabaja para garantizar tu acceso a la justicia, con base en el Capítulo III de nuestra Ley. Ellos son los que ponen a tu disposición la defensa pública, garantizando tu debido proceso.</p>
+        </div>
 
-                <div class="directorio-item">
-                    <img src="img/directorio/BARAJAS FELIX KAREN ALICIA.jpg" alt="Foto de peril">
-                    <h3>Barajas Felix Karen Alicia</h3>
-                    <p class="puesto">Titular de la Unidad de Transparencia</p>
-                    <p class="desc">Ext. 1001</p>
-                </div>
+        <div class="mencion-campeche">
+            <h3>Organigrama Institucional</h3>
+            <br>
+            <img src="img/directorio/organigrama.jpg" alt="Organigrama Institucional" class="delegation-photo">
+        </div>    
 
-                <div class="directorio-item">
-                    <img src="img/directorio/GUADALUPE MONTALVO GARCIA.jpg" alt="Foto de peril">
-                    <h3>Guadalupe Montalvo Garcia</h3>
-                    <p class="puesto">Encargada de la Dirección de Administración</p>
-                    <p class="desc">Ext. 1004</p>
-                </div>
-
-                <div class="directorio-item">
-                    <img src="img/directorio/PEREZ ESTRELLA MAYRA YOSELIN.jpeg" alt="Foto de peril">
-                    <h3>Perez Estrella Mayra Yoselin</h3>
-                    <p class="puesto">Titular de la Unidad de Asistencia Juridica</p>
-                    <p class="desc">Ext. 1040</p>
-                </div>
-
-                <div class="directorio-item">
-                    <img src="img/directorio/TELLO GARCIA LORENA DEL ROSARIO.jpeg" alt="Foto de peril">
-                    <h3>Tello Garcia Lorena del Rosario</h3>
-                    <p class="puesto">Titular de la Unidad de Defensoria Publica</p>
-                    <p class="desc">Ext. 1016</p>
-                </div>
-
-                <div class="directorio-item">
-                    <img src="img/directorio/MEX PÉREZ EDUARDO ENRIQUE.jpg" alt="Foto de peril">
-                    <h3>Mex Perez Eduardo Enrique</h3>
-                    <p class="puesto">Titular de la Unidad de Asistencia y Atencion a Victimas</p>
-                    <p class="desc">Ext. 1033</p>
-                </div>
-
+        <div class="delegation-block">
+            <div class="delegation-header">
+                <h3><i class="fas fa-users"></i> Nuestro Equipo Directivo</h3>
             </div>
-
-
             
-            <section class="delegaciones">
-                <h3><i class="fas fa-map-marker-alt"></i> Nuestras Delegaciones Municipales</h3>
-                <p>Contamos con 8 delegaciones para estar más cerca de ti.</p>
-                <ul>
-                    <li>Carmen</li>
-                    <li>Escárcega</li>
-                    <li>Calakmul</li>
-                    <li>Candelaria</li>
-                    <li>Champotón</li>
-                    <li>Hecelchakán</li>
-                    <li>Calkiní</li>
-                    <li>(La oficina de Campeche es la sede principal)</li>
-                </ul>
-            </section>
+            <div class="delegation-body staff-section">
+                <div class="staff-grid">
+
+                    <div class="staff-card">
+                        <img src="img/directorio/KARLA BEATRIZ CHUC ESTRELLA.jpg" alt="Karla Beatriz Chuc Estrella">
+                        <div class="staff-name">Karla Beatriz Chuc Estrella</div>
+                        <div class="staff-role">Encargada del Despacho de la Dirección General</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1008</div>
+                    </div>
+
+                    <div class="staff-card">
+                        <img src="img/directorio/BARAJAS FELIX KAREN ALICIA.jpg" alt="Barajas Felix Karen Alicia">
+                        <div class="staff-name">Barajas Felix Karen Alicia</div>
+                        <div class="staff-role">Titular de la Unidad de Transparencia</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1001</div>
+                    </div>
+
+                    <div class="staff-card">
+                        <img src="img/directorio/GUADALUPE MONTALVO GARCIA.jpg" alt="Guadalupe Montalvo Garcia">
+                        <div class="staff-name">Guadalupe Montalvo Garcia</div>
+                        <div class="staff-role">Encargada de la Dirección de Administración</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1004</div>
+                    </div>
+
+                    <div class="staff-card">
+                        <img src="img/directorio/PEREZ ESTRELLA MAYRA YOSELIN.jpeg" alt="Perez Estrella Mayra Yoselin">
+                        <div class="staff-name">Perez Estrella Mayra Yoselin</div>
+                        <div class="staff-role">Titular de la Unidad de Asistencia Juridica</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1040</div>
+                    </div>
+
+                    <div class="staff-card">
+                        <img src="img/directorio/TELLO GARCIA LORENA DEL ROSARIO.jpeg" alt="Tello Garcia Lorena del Rosario">
+                        <div class="staff-name">Tello Garcia Lorena del Rosario</div>
+                        <div class="staff-role">Titular de la Unidad de Defensoria Publica</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1016</div>
+                    </div>
+
+                    <div class="staff-card">
+                        <img src="img/directorio/MEX PÉREZ EDUARDO ENRIQUE.jpg" alt="Mex Perez Eduardo Enrique">
+                        <div class="staff-name">Mex Perez Eduardo Enrique</div>
+                        <div class="staff-role">Titular de la Unidad de Asistencia y Atencion a Victimas</div>
+                        <div class="staff-ext"><i class="fas fa-phone-alt"></i> Ext. 1033</div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </main>
-    <footer><div class="container"><p>© 2025 INDAJUCAM - Todos los derechos reservados.</p><p>Instituto de Acceso a la Justicia del Estado de Campeche</p></div></footer>
 
-    <script>
-    document.querySelectorAll('.zoom-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const imgSrc = this.getAttribute('data-img');
-            document.getElementById("lightbox-img").src = imgSrc;
-            document.getElementById("lightbox-overlay").style.display = "flex";
-        });
-    });
-
-    document.getElementById("close-lightbox").addEventListener('click', function() {
-        document.getElementById("lightbox-overlay").style.display = "none";
-    });
-
-    // Cerrar con ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") {
-            document.getElementById("lightbox-overlay").style.display = "none";
-        }
-    });
-    </script>
+    <footer>
+        <div class="footer-content">
+            <p>
+                <strong>Instituto de Acceso a la Justicia del Estado de Campeche (INDAJUCAM)</strong><br>
+                Calle Niebla #2, Col. Fracciorama 2000, Campeche.<br>
+                Tel: 981 145 6181
+            </p>
+            <a href="https://www.facebook.com/INDAJUCAM1" target="_blank" class="btn-facebook">
+                <i class="fab fa-facebook-f"></i> Ir al Facebook Oficial
+            </a>
+        </div>
+    </footer>
 
 </body>
 </html>

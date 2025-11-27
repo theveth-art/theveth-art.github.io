@@ -27,6 +27,12 @@
         .delegation-header { background-color: #8B1D35; color: white; padding: 15px 25px; }
         .delegation-header h3 { margin: 0; font-size: 1.4rem; font-weight: 600; text-transform: uppercase; }
         .delegation-body { padding: 30px; }
+
+        .no-photo {
+            width: 150px; height: 150px; background-color: #eee; color: #bbb;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; margin: 0 auto 15px auto;
+        }
         
         /* Grilla de Personal (Adaptada para el Directorio) */
         .staff-section { margin-top: 0; padding-top: 20px; }
@@ -41,8 +47,17 @@
         
         @media (max-width: 768px) { 
             .staff-card { width: 100%; max-width: 280px; }
-            .navbar { flex-direction: column; padding: 10px; }
-            .nav-links { margin-top: 10px; }
+        }
+
+        @media print {
+            .navbar, .footer-content, .contact-banner, .requisitos-box, .staff-section, .page-title, .btn-submit, .action-buttons {
+                display: none !important;
+            }
+            body { background-color: #fff; font-size: 12px; }
+            .container-primera-vez { margin: 0; padding: 0; max-width: 100%; }
+            .form-container { box-shadow: none; border: none; padding: 0; margin: 0; }
+            input, textarea, select { border: 1px solid #aaa !important; background: none !important; }
+            fieldset { page-break-inside: avoid; }
         }
     </style>
 </head>
